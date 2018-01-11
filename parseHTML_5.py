@@ -2,7 +2,7 @@ import os
 from bs4 import BeautifulSoup
 from lxml import html
 
-targetFolder = '2017-12-20'
+targetFolder = 'data' + '/' + '2017-12-20'
 def parseHTML():
 	htmlFiles, artistAll, targetObj = [], {}, {}
 	for subFile in os.listdir(targetFolder):
@@ -81,9 +81,8 @@ def calculateArtistValue(artistAllObj):
 		artistObj = artistAllObj[artist]
 		for work in artistObj['works']:
 			priceNum = parseStrNumToNum(work['price'])
-
 			artistTotalValue += priceNum
-		print(artistTotalValue)
+
 		artistTotalValue = str(artistTotalValue)
 		floatBreakIndex = artistTotalValue.index('.')
 		artistTotalValue = parseNumToWrittenNum(artistTotalValue[:floatBreakIndex]) + '.' + artistTotalValue[floatBreakIndex + 1:]
