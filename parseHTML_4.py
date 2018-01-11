@@ -2,7 +2,7 @@ import os
 from bs4 import BeautifulSoup
 from lxml import html
 
-targetFolder = '2015-03-18'
+targetFolder = 'data' + '/' + '2015-03-18'
 htmlFiles, artistAll, targetObj = [], [], {}
 for subFile in os.listdir(targetFolder):
 	htmlFiles.append(subFile)
@@ -47,7 +47,7 @@ for subFile in htmlFiles:
 	breakIndex = price.strip().index(' ')
 	worksObj['currency'] = price[:breakIndex]
 	worksObj['price'] = price[breakIndex + 1:]
-	targetObj['works'] = worksObj
+	targetObj['works'] = [worksObj]
 
 	artistAll.append(targetObj)
 	f.close()
