@@ -8,5 +8,10 @@ HTML parser practice using Python BeautifulSoup
 - ParseHTML_4.py
 - ParseHTML_5.py
 
+## Environment
+- OSX
+- Python 3.x
+- BeautifulSoup
+
 ## Author
 Wei-Chung Chen
