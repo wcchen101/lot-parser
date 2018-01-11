@@ -1,7 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 
-targetFolder = '2015-03-18'
+targetFolder = 'data' + '/' + '2015-03-18'
 htmlFiles, titleAll = [], []
 for subFile in os.listdir(targetFolder):
 	htmlFiles.append(subFile)
