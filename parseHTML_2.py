@@ -1,7 +1,7 @@
 import os
 from bs4 import BeautifulSoup
 
-targetFolder = '2015-03-18'
+targetFolder = 'data' + '/' + '2015-03-18'
 htmlFiles, artistAll, targetObj = [], [], {}
 for subFile in os.listdir(targetFolder):
 	htmlFiles.append(subFile)
@@ -18,7 +18,7 @@ for subFile in htmlFiles:
 		work = refinedTitle[breakIndex + 1:].strip()
 		targetObj = {
 			'artist': title,
-			'work': work
+			'work': [work]
 		}
 		artistAll.append(targetObj)
 	f.close()
